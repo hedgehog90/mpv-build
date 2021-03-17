@@ -1,1 +1,2 @@
---lua=luajit --disable-gl --enable-libmpv-shared
+--lua=luajit
+--disable-optimize

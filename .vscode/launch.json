@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/mpv/build/mpv",
+            // "args": ["--o=out12312321.mkv", "--of=matroska", "--ovc=libx264", "--oac=aac", "--msg-level=all=v", "--log-file=log.txt", "--gapless-audio=no", "--audio-pitch-correction=no", "3.mkv", "3.mkv"],
+            // "args": ["--o=out12312321.mkv", "--of=matroska", "--ovc=libx264", "--oac=aac", "--msg-level=all=v", "--log-file=log.txt", "'--lavfi-complex=[vid1]scale=1280x720[vo];[aid1]loudnorm[ao]'", "--gapless-audio=no", "--audio-pitch-correction=no", "3.mkv", "3.mkv"],
+            // "args": ["--o=out12312321.mkv", "--msg-level=all=v", "--log-file=log.txt", "'--lavfi-complex=[vid1]scale=1280x720[vo];[aid1]loudnorm[ao]'", "--gapless-audio=no", "--audio-pitch-correction=no", "1.mp4", "1.mp4"],
+            "args": ["--o=out.mkv", "--of=matroska", "--ovc=libx264", "--oac=aac", "--log-file=log.txt", "--script=test.lua", "--vf-add=lavfi=[scale=(iw*sar)*min(1280/(iw*sar)\\,720/ih):ih*min(1280/(iw*sar)\\,720/ih),pad=1280:720:(1280-iw*min(1280/iw\\,720/ih))/2:(720-ih*min(1280/iw\\,720/ih))/2,format=yuv420p]", "1.mka", "3.mkv", "1.mka"],
+            "stopAtEntry": false,
+            "cwd": "/mnt/c/Users/Public/Downloads",
+            "environment": [],
+            "console": "externalTerminal",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

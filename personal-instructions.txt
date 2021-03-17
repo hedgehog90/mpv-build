@@ -1,0 +1,13 @@
+make sure in production branch:
+  ./use-mpv-custom dev
+
+make sure all reqs are installed.
+first time:
+  ./update
+  ./clean
+  ./build
+
+to just rebuild mpv:
+
+  scripts/mpv-config
+  scripts/mpv-build $@

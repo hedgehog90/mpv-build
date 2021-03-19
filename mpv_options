@@ -1,2 +1,2 @@
 --lua=luajit
---disable-optimize
+--disable-gl

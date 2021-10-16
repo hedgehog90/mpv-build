@@ -2,7 +2,6 @@
 --enable-gpl
 --enable-version3
 --enable-vdpau
---enable-libass
 --enable-libfdk-aac
 --enable-libfreetype
 --enable-libmp3lame

@@ -86,7 +86,7 @@ checkout()
 checkout_ffmpeg=master
 #checkout_fribidi=release
 checkout_libass=master
-checkout_mpv=master
+checkout_mpv=dev
 
 
 checkout_all()

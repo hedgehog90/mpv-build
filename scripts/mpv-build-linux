@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-./scripts/mpv-config
-./scripts/mpv-build --disable-gl
+./scripts/mpv-config --disable-gl
+./scripts/mpv-build
 
 if [ -z "$1" ] && [ -d "$1" ]; then
     cp -fr mpv/build/mpv "$1"

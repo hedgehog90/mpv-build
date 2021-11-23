@@ -13,3 +13,4 @@
 --enable-libv4l2
 --enable-libx264
 --enable-libx265
+--enable-libdav1d

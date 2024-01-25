@@ -2,12 +2,14 @@
 set -e
 
 BUILD="$(pwd)"
+newline="
+"
 
-USER_OPTS="$@"
 if test -f "$BUILD"/mpv_options ; then
-    USER_OPTS="$(cat "$BUILD"/mpv_options) $USER_OPTS"
+    IFS=$newline
+    set -- $(cat "$BUILD"/mpv_options) "$@"
+    unset -v IFS
 fi
-OPTIONS="$USER_OPTS"
 
 case "$PKG_CONFIG_PATH" in
   '')
@@ -18,11 +20,13 @@ case "$PKG_CONFIG_PATH" in
     ;;
 esac
 
-# add missing private dependencies from libass.pc
-# this is necessary due to the hybrid static / dynamic nature of the build
-export LDFLAGS="$LDFLAGS $(pkg-config --libs fontconfig harfbuzz fribidi dav1d)"
-
-echo Using mpv options: $OPTIONS
+echo Using mpv options: $OPTIONS "$@"
 
 cd "$BUILD"/mpv
-./waf configure $OPTIONS
+
+# add missing private dependencies from libass.pc
+# this is necessary due to the hybrid static / dynamic nature of the build
+# need to link against stdc++ in case libplacebo was built with glslang,
+# which requires that
+export LDFLAGS="$LDFLAGS $(pkg-config --libs fontconfig harfbuzz fribidi) -lstdc++"
+meson setup build -Dbuildtype=release $OPTIONS "$@"

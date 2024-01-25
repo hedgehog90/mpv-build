@@ -2,4 +2,4 @@
 set -e
 
 cd mpv
-./waf uninstall
+ninja uninstall -C build

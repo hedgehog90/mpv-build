@@ -2,7 +2,6 @@
 --enable-gpl
 --enable-version3
 --enable-vdpau
---enable-libass
 --enable-libfdk-aac
 --enable-libfreetype
 --enable-libmp3lame
@@ -14,3 +13,4 @@
 --enable-libv4l2
 --enable-libx264
 --enable-libx265
+--enable-libdav1d

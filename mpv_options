@@ -1,5 +1,5 @@
---disable-manpage-build
---enable-lua
---enable-rubberband
---enable-ffmpeg-strict-abi
---lua=luajit
+-Dmanpage-build=disabled
+-Dlua=enabled
+-Drubberband=enabled
+-Dgl=disabled
+-Dlua=luajit

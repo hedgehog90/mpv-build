@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.jsfl": "javascript",
+    "*.as": "actionscript",
+    "encode_lavc.h": "c",
+    "encode.h": "c",
+    "demux.h": "c",
+    "stheader.h": "c"
+  }
+}

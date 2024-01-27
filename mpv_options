@@ -3,3 +3,4 @@
 --enable-rubberband
 --enable-ffmpeg-strict-abi
 --lua=luajit
+--disable-gl

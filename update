@@ -83,9 +83,9 @@ checkout()
 }
 
 # fallback targets: release/master/@foo if no config file
-checkout_ffmpeg=release/4.2
+checkout_ffmpeg=@release/4.2
 #checkout_fribidi=release
-checkout_libass=1af6240 #v0.16.0
+checkout_libass=@1af6240 #v0.16.0
 checkout_mpv=cabtv
 
 

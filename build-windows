@@ -1,0 +1,6 @@
+#!/bin/sh
+# Add MXE binaries to $PATH
+export PATH="/opt/mxe/usr/bin/:/usr/bin/:$PATH"
+cd mpv
+meson setup build --cross-file ../crossfile.txt
+meson compile -C build

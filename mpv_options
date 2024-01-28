@@ -2,5 +2,6 @@
 --enable-lua
 --enable-rubberband
 --enable-ffmpeg-strict-abi
+--enable-vaapi
 --lua=luajit
 --disable-gl
